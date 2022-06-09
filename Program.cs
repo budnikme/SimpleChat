@@ -1,3 +1,4 @@
+using Chat;
 using Chat.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddSignalR();
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddSingleton<ChatHistory>(); //add singleton with chat history
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
